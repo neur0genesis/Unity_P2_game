@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: abe8f7c14fc77ce4ca688845150b8ccb
-timeCreated: 1427787300
+timeCreated: 1427805013
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,8 @@ TextureImporter:
     21300018: Thief parts_9
     21300020: Thief parts_10
     21300022: Thief parts_11
+    21300024: Thief parts_12
+    21300026: Thief parts_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -75,9 +77,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 324
-        y: 1042
+        y: 997
         width: 785
-        height: 607
+        height: 652
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,7 +151,7 @@ TextureImporter:
         width: 288
         height: 325
       alignment: 9
-      pivot: {x: .850599527, y: .760975063}
+      pivot: {x: .82255131, y: .748547554}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Thief parts_9
       rect:
@@ -159,7 +161,7 @@ TextureImporter:
         width: 383
         height: 333
       alignment: 9
-      pivot: {x: .742544949, y: .960895181}
+      pivot: {x: .750956774, y: .951781332}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Thief parts_10
       rect:
@@ -169,7 +171,7 @@ TextureImporter:
         width: 236
         height: 351
       alignment: 9
-      pivot: {x: .551342189, y: .787670672}
+      pivot: {x: .553123057, y: .785741985}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Thief parts_11
       rect:
@@ -179,7 +181,27 @@ TextureImporter:
         width: 789
         height: 713
       alignment: 9
-      pivot: {x: .0751222894, y: .686933577}
+      pivot: {x: .0815729871, y: .699277997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Thief parts_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 658
+        width: 250
+        height: 361
+      alignment: 9
+      pivot: {x: .587150872, y: .979393601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Thief parts_13
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 172
+        width: 198
+        height: 366
+      alignment: 2
+      pivot: {x: .5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
