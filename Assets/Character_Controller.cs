@@ -19,6 +19,9 @@ public class Character_Controller : MonoBehaviour {
 		legSprite[2] = GameObject.Find("Left_leg_idle").GetComponent<SpriteRenderer>();
 		legSprite[3] = GameObject.Find("Right_leg_idle").GetComponent<SpriteRenderer>();
 
+		legSprite [0].enabled = false; 
+		legSprite [1].enabled = false;
+
 		}
 
 
