@@ -1,8 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Character_Controller.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shader\Custom_Sprite.shader">
     <Files>
-      <File FileName="Assets\Character_Controller.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\CameraMovement.cs" Line="26" Column="23" />
+      <File FileName="Assets\Character_Controller.cs" Line="48" Column="10" />
+      <File FileName="Assets\Shop.cs" Line="26" Column="20" />
+      <File FileName="Assets\Shader\Custom_Sprite.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
