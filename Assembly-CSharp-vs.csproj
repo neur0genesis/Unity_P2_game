@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Tags.cs" />
      <Compile Include="Assets\Shop.cs" />
      <None Include="Assets\Shader\Custom_Sprite.shader" />
+     <None Include="Assets\Shader\curve.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -6,6 +6,7 @@ public class Character_Controller : MonoBehaviour {
 	private Animator animator;
 
 	public float speed = 0.5f; 
+	public float scale;
 
 	SpriteRenderer[] legSprite = new SpriteRenderer[4];
 
@@ -52,11 +53,11 @@ public class Character_Controller : MonoBehaviour {
 		transform.Translate (movement); 
 		
 		if (horizontal > 0) {
-			transform.localScale = new Vector3(-1,1,1);
+			transform.localScale = new Vector3(-scale,scale,scale);
 		}
 		
 		if (horizontal < 0 ) {
-			transform.localScale = new Vector3(1,1,1);
+			transform.localScale = new Vector3(scale,scale,scale);
 		}
 	}
 
