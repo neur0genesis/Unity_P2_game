@@ -46,18 +46,33 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Character_Controller.cs" />
+     <Compile Include="Assets\Scripts\ExtendedFlycam.cs" />
+     <Compile Include="Assets\Scripts\MouseCameraControl.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Shop.cs" />
+     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
+     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
      <None Include="Assets\Shader\Custom_Sprite.shader" />
      <None Include="Assets\Shader\curve.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\Additive\SimpleSeeThrough_Player_3D.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SimpleSeeThrough_Props_Cutout.shader" />
+     <None Include="Assets\ShaderForge\Readme.txt" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SimpleSeeThrough_Props_3D.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SingleColor\SimpleSeeThrough_Player_3D.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Parallax.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\Additive\SimpleSeeThrough_Player_Sprite.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightWrapping.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexColorRounding.shader" />
+     <None Include="Assets\Shader\Grass.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\TessellationDisplacement.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Tiles.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SimpleSeeThrough_Props_Sprite.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\PixelRotator.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SingleColor\SimpleSeeThrough_Player_Sprite.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
