@@ -59,6 +59,7 @@
      <None Include="Assets\Simple_SeeThrough\Shaders\SimpleSeeThrough_Props_Cutout.shader" />
      <None Include="Assets\ShaderForge\Readme.txt" />
      <None Include="Assets\Simple_SeeThrough\Shaders\SimpleSeeThrough_Props_3D.shader" />
+     <None Include="Assets\Simple_SeeThrough\Shaders\SingleColor\ModifiedSimpleSeeThrough_Player_Sprite.shader" />
      <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
      <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
      <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />

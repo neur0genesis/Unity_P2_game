@@ -4,6 +4,7 @@ using System.Collections;
 public class Character_Controller : MonoBehaviour {
 
 	private Animator animator;
+	SpriteRenderer[] sprites; 
 
 	public float speed = 0.5f; 
 	public float scale;
@@ -20,6 +21,12 @@ public class Character_Controller : MonoBehaviour {
 		rig = GameObject.Find ("CharacterRig").transform;
 
 		animator = GetComponentInChildren<Animator>();
+
+		//sprites =  GetComponentsInChildren<SpriteRenderer> ();
+
+		/*for (int i = 0; i < sprites.Length; i++) {
+			sprites [i].enabled = false;
+		}*/
 
 		//Initialize leg-sprites
 		legSprite[0] = GameObject.Find("Left_leg_run").GetComponent<SpriteRenderer>();
