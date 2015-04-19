@@ -9,6 +9,7 @@ public class Character_Controller : MonoBehaviour {
 	public float speed = 0.5f; 
 	public float scale;
 	private Transform rig; 
+	public Transform[] particleMoney = new Transform[2];
 
 	SpriteRenderer[] legSprite = new SpriteRenderer[4];
 
@@ -65,10 +66,16 @@ public class Character_Controller : MonoBehaviour {
 		
 		if (horizontal > 0) {
 			rig.transform.localScale = new Vector3(-scale,scale,scale);
+			particleMoney[0].localScale = new Vector3(-scale,scale,scale);
+			particleMoney[1].localScale = new Vector3(-scale,scale,scale);
+
 		}
 		
 		if (horizontal < 0 ) {
 			rig.transform.localScale = new Vector3(scale,scale,scale);
+			particleMoney[0].localScale = new Vector3(scale,scale,scale);
+			particleMoney[1].localScale = new Vector3(scale,scale,scale);
+
 		}
 	}
 
