@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Touch.cs">
     <Files>
-      <File FileName="Assets\Touch.cs" Line="42" Column="1" />
+      <File FileName="Assets\Collectable.cs" Line="15" Column="1" />
+      <File FileName="Assets\Loot.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character_Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Touch.cs" Line="63" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

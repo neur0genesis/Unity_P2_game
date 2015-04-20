@@ -7,6 +7,7 @@ public class Touch : MonoBehaviour {
 	GameObject selectedObject;
 	RaycastHit hit;
 	public Material selectedMat; 
+	public bool endGame = false;
 
 
 
@@ -18,28 +19,61 @@ public class Touch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-					
+
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		if (Input.GetKeyDown(KeyCode.Q)) {
+			endGame = !endGame;
+		}
+
+		if (endGame) {
+		selectBuilding();
+		}
+
+		selectCollectable();
+
+	}
+
+	void selectBuilding() {
+
 		if (Input.GetMouseButtonDown(0)) {
-					
-			ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-			if (Physics.Raycast(ray, out hit, 100))
-
-				print(hit.collider.gameObject.transform.parent.name);
-
+			if (Physics.Raycast(ray, out hit, 200))
+				
+				print (hit.collider.gameObject);
+			
 			if (hit.collider.gameObject.tag == "Building") { 
 				selectedObject = hit.collider.gameObject;
+				
+				Renderer[] renderSelected; 
+
+				renderSelected = selectedObject.GetComponentsInChildren<Renderer>();
+				
+				for (int i = 0; i < renderSelected.Length; i++) {
+					renderSelected[i].material = selectedMat;
+				}
 			}
+		}
+	}
 
+	void selectCollectable() {
 
-			Renderer[] renderSelected; 
-			Shader shader; 
+		if (Input.GetMouseButtonDown(0)) {
 
+			if (Physics.Raycast(ray, out hit, 200))
 
-			renderSelected = selectedObject.GetComponentsInChildren<Renderer>();
+		if (hit.collider.gameObject.tag == "Collectable") { 
+			selectedObject = hit.collider.gameObject;
+			
+				Renderer[] renderSelected; 
 
-			for (int i = 0; i < renderSelected.Length; i++) {
-				renderSelected[i].material = selectedMat;
+				Destroy (selectedObject);
+			
+				renderSelected = selectedObject.GetComponentsInChildren<Renderer>();
+			
+				for (int i = 0; i < renderSelected.Length; i++) {
+					renderSelected[i].material = selectedMat;
+				}
 			}
 		}
 	}

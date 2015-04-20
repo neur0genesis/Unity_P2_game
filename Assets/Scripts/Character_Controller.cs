@@ -5,7 +5,8 @@ public class Character_Controller : MonoBehaviour {
 
 	private Animator animator;
 	SpriteRenderer[] sprites; 
-
+	ParticleSystem[] lootEmitter = new ParticleSystem[2]; 
+	
 	public float speed = 0.5f; 
 	public float scale;
 	private Transform rig; 
@@ -19,7 +20,12 @@ public class Character_Controller : MonoBehaviour {
 	// USE THIS FOR INITIALIZATION
 	void Start () {
 
+
 		rig = GameObject.Find ("CharacterRig").transform;
+		lootEmitter = GameObject.Find ("CharacterRig").GetComponentsInChildren<ParticleSystem>();
+
+		lootEmitter[0].enableEmission = false; 
+		lootEmitter[1].enableEmission = false; 
 
 		animator = GetComponentInChildren<Animator>();
 
@@ -56,7 +62,13 @@ public class Character_Controller : MonoBehaviour {
 		float horizontal = Input.GetAxis ("Horizontal");
 		float vertical = Input.GetAxis ("Vertical"); 
 
+		//control loot drop
+		if (Input.GetKeyDown(KeyCode.E)) {
 
+			gameObject.GetComponent<Loot>().dropLoot = !gameObject.GetComponent<Loot>().dropLoot;
+			lootEmitter[0].enableEmission = !lootEmitter[0].enableEmission;
+			lootEmitter[1].enableEmission = !lootEmitter[1].enableEmission;
+		}
 
 		//print (vertical*speed);
 
@@ -112,11 +124,6 @@ public class Character_Controller : MonoBehaviour {
 				legSprite [3].enabled = true;
 				
 				check = false;
-			}
-
-
-
-	}
-
-
+		}
+	}	
 }
