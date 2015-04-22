@@ -16,6 +16,7 @@ public class Character_Controller : MonoBehaviour {
 
 	bool postTransition;
 	bool check;
+	bool hidden = false; 
 
 	// USE THIS FOR INITIALIZATION
 	void Start () {
@@ -29,7 +30,7 @@ public class Character_Controller : MonoBehaviour {
 
 		animator = GetComponentInChildren<Animator>();
 
-		//sprites =  GetComponentsInChildren<SpriteRenderer> ();
+		sprites =  GetComponentsInChildren<SpriteRenderer> ();
 
 		/*for (int i = 0; i < sprites.Length; i++) {
 			sprites [i].enabled = false;
@@ -51,7 +52,11 @@ public class Character_Controller : MonoBehaviour {
 	void Update () {
 	
 		controller ();
-		animate ();
+		hidePlayer ();
+
+		if (!hidden) {
+			animate ();
+		}
 
 	}
 
@@ -126,4 +131,34 @@ public class Character_Controller : MonoBehaviour {
 				check = false;
 		}
 	}	
+
+	void hidePlayer() {
+		//Hide sprites when entering building
+		if (Input.GetKeyDown (KeyCode.R) && hidden == false) {
+			
+			hidden = true;
+			
+			for (int i = 0; i < sprites.Length; i++) {
+				sprites [i].enabled = false;
+			}
+			for (int i = 0; i < legSprite.Length; i++) {
+				legSprite [i].enabled = false;
+			}
+		} else if (Input.GetKeyDown (KeyCode.R) && hidden == true) {
+
+			hidden = false;
+
+			for (int i = 0; i < sprites.Length; i++) {
+				sprites [i].enabled = true;
+			}
+			for (int i = 0; i < legSprite.Length; i++) {
+				legSprite [i].enabled = true;
+			}
+
+			legSprite [0].enabled = false;
+			legSprite [1].enabled = false;
+
+		}
+	}
+
 }
