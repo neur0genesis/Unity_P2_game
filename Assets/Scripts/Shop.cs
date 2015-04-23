@@ -5,16 +5,16 @@ using System.Collections;
 
 public class Shop : MonoBehaviour {
 	
-	private Transform puppetTransform; 
 	public Renderer[] buildingRenderer; 
 	public Color[] originalColor;
 	private Vector3 originalScale;  
-	public static GameObject[] order = new GameObject[5]; 
+	public static int AMOUNT_TO_REMEMBER = 5; 
+	public static GameObject[] order; 
 	public static Text remaining; 
+	public GameObject enterArea;
 
 	float scaleValue;
 	bool entered;
-	float distance;
 	static int num;
 	public AudioClip alarmClip; 
 
@@ -30,10 +30,10 @@ public class Shop : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		order = new GameObject[AMOUNT_TO_REMEMBER];
 
 		remaining = GameObject.Find("Remaining").GetComponent<Text>();
 		
-		puppetTransform = GameObject.FindWithTag ("Puppet").transform;
 		originalScale = transform.localScale; 
 		
 		buildingRenderer = GetComponentsInChildren<Renderer>();
@@ -47,24 +47,16 @@ public class Shop : MonoBehaviour {
 		puppet = GameObject.FindGameObjectWithTag("Puppet");
 
 		remaining.text = "" + order.Length + "/" + order.Length + " remaining";
-
-
-
-		
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		
-		Vector3 relativePos = puppetTransform.position - transform.position;
-		distance = relativePos.magnitude;
-		
-		if (distance < 10 && Input.GetKeyDown(KeyCode.R) && this.entered == false) {
-			this.entered = true; 
-			print (this.gameObject);
 
-			if (num < order.Length - 1) {
-			order[num] = this.gameObject;
+		if (enterArea.GetComponent<Enter_Area>().enterable == true && Input.GetKeyDown(KeyCode.E) && this.entered == false) {
+			entered = true; 
+
+			if (num < order.Length) {
+			order[num] = gameObject;
 			num++;
 				remaining.text = "" + (order.Length - num) + "/" + order.Length + " remaining";
 			}
@@ -74,23 +66,18 @@ public class Shop : MonoBehaviour {
 
 			AudioSource.PlayClipAtPoint(alarmClip,transform.position);
 
-		} else if (this.entered == true && Input.GetKeyDown(KeyCode.R)) {
-			this.entered = false;
-			puppet.gameObject.GetComponent<Puppet_Controller>().visible = true;
-			puppet.gameObject.GetComponent<Puppet_Controller>().visibility(); 
-		}
+			StartCoroutine(robbery());  
+		} 
 
 		if (entered == true) {
 			animate();
-		} else {
-			reset(); //Optimize this part later, so it doesn't evaluate when not needed
-		}
+		} 
 
 		//This part of the code logs the buildings into an array list
 
 	}
 	
-	void animate() {
+	public void animate() {
 			for (int i = 0; i < buildingRenderer.Length; i++) {
 				buildingRenderer[i].material.color = Color.Lerp(Color.red,Color.white,0.5f);
 			}
@@ -105,4 +92,14 @@ public class Shop : MonoBehaviour {
 			
 			transform.localScale = originalScale;
 	}
+
+	IEnumerator robbery() {
+		yield return new WaitForSeconds(3);
+		entered = false;
+		reset(); 
+		puppet.gameObject.GetComponent<Puppet_Controller>().visible = true;
+		puppet.gameObject.GetComponent<Puppet_Controller>().visibility(); 
+
+	}
+
 }

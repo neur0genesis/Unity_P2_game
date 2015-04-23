@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Puppet_Controller : MonoBehaviour {
@@ -12,6 +12,8 @@ public class Puppet_Controller : MonoBehaviour {
 	private SpriteRenderer[] legSprite = new SpriteRenderer[4];
 	
 	ParticleSystem[] lootEmitter = new ParticleSystem[2]; 
+
+	Vector3 movement;
 	
 	//Primitive data types
 	bool postTransition, check;
@@ -45,7 +47,7 @@ public class Puppet_Controller : MonoBehaviour {
 	// UPDATE IS CALLED ONCE PER FRAME
 	void Update () {
 		
-		emitterControl();
+		emitterControl(); //This could be optimized
 		
 		if (visible == true) {
 			animate ();
@@ -56,7 +58,7 @@ public class Puppet_Controller : MonoBehaviour {
 
 	void emitterControl() {
 		//control loot drop
-		if (Input.GetKeyDown(KeyCode.E) && visible == true) {
+		if (Input.GetKeyDown(KeyCode.R) && visible == true) {
 			
 			gameObject.GetComponent<Loot>().dropLoot = !gameObject.GetComponent<Loot>().dropLoot;
 			lootEmitter[0].enableEmission = !lootEmitter[0].enableEmission;
@@ -72,16 +74,34 @@ public class Puppet_Controller : MonoBehaviour {
 	//CONTROLLER METHOD FOR THE PUPPET-OBJECT  
 	void controller() {
 		
-		float horizontal = Input.GetAxis ("Horizontal");
-		float vertical = Input.GetAxis ("Vertical"); 
-		
-
+		float horizontal = Input.GetAxis ("Horizontal"); //change later
 		//print (vertical*speed);
-		
-		Vector3 movement = new Vector3 (horizontal*speed, 0, vertical*speed);
-		
+
+		if (Input.GetKey(KeyCode.W)) {
+			movement = new Vector3 (0, 0, 1*speed);
+			transform.Translate (movement); 
+		} 
+
+		if (Input.GetKey(KeyCode.S)) {
+			movement = new Vector3 (0, 0, -1*speed);
+			transform.Translate (movement); 
+		} 
+
+		if (Input.GetKey(KeyCode.A)) {
+			movement = new Vector3 (-1*speed, 0, 0);
+			transform.Translate (movement); 
+		} 
+
+		if (Input.GetKey(KeyCode.D)) {
+		movement = new Vector3 (1*speed, 0, 0);
 		transform.Translate (movement); 
-		
+	}
+
+
+
+
+
+
 		if (horizontal > 0) {
 			rig.transform.localScale = new Vector3(-scale,scale,scale);
 			particleMoney[0].localScale = new Vector3(-scale,scale,scale);
