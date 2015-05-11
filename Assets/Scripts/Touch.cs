@@ -8,7 +8,7 @@ public class Touch : MonoBehaviour {
 	RaycastHit hit;
 	int num;
 	public Material selectedMat; 
-	public bool endGame = false;
+	public static bool endGame = false;
 	public bool checking; 
 
 	public AudioClip pickup; 
@@ -75,7 +75,7 @@ public class Touch : MonoBehaviour {
 				renderSelected[i].material.color = Color.white;
 			}
 
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(0.5f);
 
 				if (Shop.order[num] == selectedObject) {
 

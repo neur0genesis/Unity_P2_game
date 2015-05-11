@@ -12,12 +12,11 @@ public class Shop : MonoBehaviour {
 	public static GameObject[] order; 
 	public static Text remaining; 
 	public GameObject enterArea;
-
 	float scaleValue;
 	bool entered;
 	static int num;
 	public AudioClip alarmClip; 
-
+	
 	GameObject puppet; 
 	
 	/* This script is used to control how the puppet
@@ -35,7 +34,7 @@ public class Shop : MonoBehaviour {
 		remaining = GameObject.Find("Remaining").GetComponent<Text>();
 		
 		originalScale = transform.localScale; 
-		
+
 		buildingRenderer = GetComponentsInChildren<Renderer>();
 		
 		originalColor = new Color[buildingRenderer.Length];
@@ -81,7 +80,7 @@ public class Shop : MonoBehaviour {
 			for (int i = 0; i < buildingRenderer.Length; i++) {
 				buildingRenderer[i].material.color = Color.Lerp(Color.red,Color.white,0.5f);
 			}
-			scaleValue += 5f * Time.deltaTime;
+		scaleValue += 5f * Time.deltaTime;
 			transform.localScale += new Vector3 (Mathf.Cos(scaleValue)/10,Mathf.Cos(scaleValue)/10,Mathf.Cos(scaleValue)/10);
 	}
 

@@ -6,6 +6,7 @@ public class Game_Controller : MonoBehaviour {
 
 	public static int coinAmount;
 	public static int score; 
+	public Text selectBuildings;
 	public Text coinText;
 	public Text scoreText; 
 	public static bool finished; 
@@ -13,12 +14,15 @@ public class Game_Controller : MonoBehaviour {
 	bool calculated; 
 
 	// Use this for initialization
-	void awake () {
+	void start () {
 
 		coinText.GetComponent<Text>();
 		scoreText.GetComponent<Text>();
 		coinAmount = 0;
 		score = 0; 
+
+
+
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,13 @@ public class Game_Controller : MonoBehaviour {
 	void ScoreManager() {
 
 		coinText.text = "" + coinAmount;
+	
+		if (Touch.endGame == true) {
+			selectBuildings.enabled = true;
+		} else {
+			selectBuildings.enabled = false;
+
+		}
 
 		if (finished && !calculated) {
 			score = score + (2 * coinAmount * score)/100;

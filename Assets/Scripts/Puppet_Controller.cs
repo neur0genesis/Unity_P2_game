@@ -45,7 +45,7 @@ public class Puppet_Controller : MonoBehaviour {
 	}
 	
 	// UPDATE IS CALLED ONCE PER FRAME
-	void Update () {
+	void FixedUpdate () {
 		
 		emitterControl(); //This could be optimized
 		
